@@ -29,7 +29,6 @@ public partial class Solution
             // shouldnt iterate full string if we already found the longest palindrom
             if (result.Length >= (input.Length - i)) break;
 
-            var words = new HashSet<string>();
             var currentWord = new StringBuilder();
 
             for (var j = i; j < input.Length; j++)
