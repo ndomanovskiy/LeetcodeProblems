@@ -1,45 +1,46 @@
-﻿using System.Text;
-
-namespace Leetsolu;
+﻿namespace Leetsolu;
 
 public partial class Solution
 {
     public string LongestPalindrome(string str)
     {
-        static bool IsPolindrom(StringBuilder word)
-        {
-            if (word.Length == 1) return true;
+        int resultStartIndex = 0;
+        int resultLength = 0;
 
-            for (var i = 0; i < word.Length / 2; i++)
-            {
-                var charFromBeginning = word[i];
-                var symmetricalChar = word[word.Length - 1 - i];
+        int i = 0;
+        int j = 0;
 
-                if (charFromBeginning != symmetricalChar) return false;
-            }
+        int firstInSS = 0;
+        int lastInSS = 0;
 
-            return true;
-        }
+        bool @break = false;
 
-        var input = new StringBuilder(str);
-        var result = new StringBuilder();
-
-        for (var i = 0; i < input.Length; i++)
+        for (; i < str.Length; i++)
         {
             // shouldnt iterate full string if we already found the longest palindrom
-            if (result.Length >= (input.Length - i)) break;
+            if (resultLength >= (str.Length - i)) break;
 
-            var currentWord = new StringBuilder();
-
-            for (var j = i; j < input.Length; j++)
+            for (j = i; j < str.Length; j++)
             {
-                currentWord.Append(input[j]);
+                @break = false;
 
-                if (IsPolindrom(currentWord) && currentWord.Length > result.Length)
-                    result = new StringBuilder(currentWord.ToString());
+                for (firstInSS = i, lastInSS = j; firstInSS < lastInSS; firstInSS++, lastInSS--)
+                {
+                    if (str[firstInSS] != str[lastInSS])
+                    {
+                        @break = true;
+                        break;
+                    }
+                }
+
+                if (!@break && (j - i + 1) > resultLength)
+                {
+                    resultStartIndex = i;
+                    resultLength = j - i + 1;
+                }
             }
         }
 
-        return result.ToString();
+        return str.Substring(resultStartIndex, resultLength);
     }
 }

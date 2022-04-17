@@ -8,6 +8,7 @@ public class MediumProblemsSolutionTests
     [InlineData("babad", "bab")]
     [InlineData("a", "a")]
     [InlineData("cbbd", "bb")]
+    [InlineData("avsesv21212xxxoxxx", "xxxoxxx")]
     public void Five_LongestPalindromicSubstringTest(string input, string result)
     {
         var solutionFor = new Solution();
