@@ -60,4 +60,15 @@ public class SolutionsTests
     {
         Assert.Equal(result, Solution.Convert(s, numRows));
     }
+
+    [Theory]
+    [InlineData(123, 321)]
+    [InlineData(-123, -321)]
+    [InlineData(120, 21)]
+    [InlineData(901000, 109)]
+    [InlineData(1534236469, 0)]
+    public void LC7ReverseInteger(int x, int result)
+    {
+        Assert.Equal(result, Solution.Reverse(x));
+    }
 }
