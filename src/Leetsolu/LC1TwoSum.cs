@@ -3,12 +3,14 @@
 public partial class Solution
 {
     /// <summary>
-    /// Two Sum: Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+    /// Two Sum: Given an array of integers nums and an integer target,
+    /// return indices of the two numbers such that they add up to target.
+    /// 
     /// https://leetcode.com/problems/two-sum/
     /// <para>Runtime: 161 ms, faster than 82.88% of C# online submissions for Two Sum.</para>
     /// <para>Memory Usage: 44.2 MB, less than 21.66% of C# online submissions for Two Sum.</para>
     /// </summary>
-    public int[]? TwoSum(int[] nums, int target)
+    public static int[]? TwoSum(int[] nums, int target)
     {
         int i = 0;
         int j = 0;

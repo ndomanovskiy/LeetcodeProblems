@@ -64,12 +64,15 @@ public partial class Solution
 {
     // todo : dicrease amount of memory usage
     /// <summary>
-    /// Add Two Numbers: You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+    /// Add Two Numbers: You are given two non-empty linked lists representing two non-negative integers.
+    /// The digits are stored in reverse order, and each of their nodes contains a single digit.
+    /// Add the two numbers and return the sum as a linked list.
+    /// 
     /// https://leetcode.com/problems/add-two-numbers/
     /// <para>Runtime: 85 ms, faster than 93.04% of C# online submissions for Add Two Numbers.</para>
     /// <para>Memory Usage: 49.2 MB, less than 6.00% of C# online submissions for Add Two Numbers.</para>
     /// </summary>
-    public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
+    public static ListNode AddTwoNumbers(ListNode l1, ListNode l2)
     {
         ListNode leftNumber = l1, rightNumber = l2;
 
