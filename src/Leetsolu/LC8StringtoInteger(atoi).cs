@@ -35,6 +35,7 @@ public partial class Solution
     /// - Do not ignore any characters other than the leading whitespace or the rest of the string after the digits.
     /// 
     /// https://leetcode.com/problems/string-to-integer-atoi/
+    /// 
     /// <para>Runtime: 79 ms, faster than 62.27% of C# online submissions for String to Integer (atoi).</para>
     /// <para>Memory Usage: 38.1 MB, less than 35.92% of C# online submissions for String to Integer (atoi).</para>
     /// </summary>

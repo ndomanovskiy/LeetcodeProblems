@@ -87,4 +87,15 @@ public class SolutionsTests
     {
         Assert.Equal(result, Solution.MyAtoi(s));
     }
+
+    [Theory]
+    [InlineData(121, true)]
+    [InlineData(-121, false)]
+    [InlineData(10, false)]
+    [InlineData(11, true)]
+    [InlineData(223322, true)]
+    public void LC9PalindromeNumber(int x, bool result)
+    {
+        Assert.Equal(result, Solution.IsPalindrome(x));
+    }
 }
