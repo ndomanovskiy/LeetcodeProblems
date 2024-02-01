@@ -1,15 +1,21 @@
-﻿namespace Leetsolu;
+namespace LeetcodeProblems;
 
-public partial class Solution
+/// <summary>
+/// https://leetcode.com/problems/longest-palindromic-substring/
+/// </summary>
+public class LongestPalindrome
 {
-    /// <summary>
-    /// Longest Palindromic Substring: Given a string s, return the longest palindromic substring in s.
-    /// 
-    /// https://leetcode.com/problems/longest-palindromic-substring/
-    /// <para>Runtime: 204 ms, faster than 47.04% of C# online submissions for Longest Palindromic Substring.</para>
-    /// <para>Memory Usage: 37.4 MB, less than 65.55% of C# online submissions for Longest Palindromic Substring.</para>
-    /// </summary>
-    public static string LongestPalindrome(string str)
+    [Theory]
+    [InlineData("babad", "bab")]
+    [InlineData("a", "a")]
+    [InlineData("cbbd", "bb")]
+    [InlineData("avsesv21212xxxoxxx", "xxxoxxx")]
+    public void Test(string input, string result)
+    {
+        Assert.Equal(result, Method(input));
+    }
+
+    private string Method(string str)
     {
         int resultStartIndex = 0;
         int resultLength = 0;

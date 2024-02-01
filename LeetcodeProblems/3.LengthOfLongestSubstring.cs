@@ -1,16 +1,17 @@
-﻿namespace Leetsolu;
+namespace LeetcodeProblems;
 
-public partial class Solution
+/// <summary>
+/// https://leetcode.com/problems/longest-substring-without-repeating-characters/
+/// </summary>
+public class LengthOfLongestSubstring
 {
-    /// <summary>
-    /// Longest Substring Without Repeating Characters: Given a string s,
-    /// find the length of the longest substring without repeating characters.
-    /// 
-    /// https://leetcode.com/problems/longest-substring-without-repeating-characters/
-    /// <para>Runtime: 295 ms, faster than 8.19% of C# online submissions for Longest Substring Without Repeating Characters.</para>
-    /// <para>Memory Usage: 36.7 MB, less than 93.54% of C# online submissions for Longest Substring Without Repeating Characters.</para>
-    /// </summary>
-    public static int LengthOfLongestSubstring(string s)
+    [Theory]
+    [InlineData("abcabcbb", 3)]
+    [InlineData("bbbbb", 1)]
+    [InlineData("pwwkew", 3)]
+    public void Test(string s, int result) => Assert.Equal(result, Method(s));
+
+    private int Method(string s)
     {
         var maxCount = 0;
 
