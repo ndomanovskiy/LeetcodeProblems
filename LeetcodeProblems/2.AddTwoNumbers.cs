@@ -5,10 +5,15 @@ namespace LeetcodeProblems;
 /// </summary>
 public class AddTwoNumbers
 {
+    public static IEnumerable<object[]> TestData => new List<object[]>
+    {
+        new object[] { new[] { 2, 4, 3 }, new[] { 5, 6, 4 }, new[] { 7, 0, 8 } },
+        new object[] { new[] { 0 }, new[] { 0 }, new[] { 0 } },
+        new object[] { new[] { 9, 9, 9, 9, 9, 9, 9 }, new[] { 9, 9, 9, 9 }, new[] { 8, 9, 9, 9, 0, 0, 0, 1 } },
+    };
+
     [Theory]
-    [InlineData(new[] { 2, 4, 3 }, new[] { 5, 6, 4 }, new[] { 7, 0, 8 })]
-    [InlineData(new[] { 0 }, new[] { 0 }, new[] { 0 })]
-    [InlineData(new[] { 9, 9, 9, 9, 9, 9, 9 }, new[] { 9, 9, 9, 9 }, new[] { 8, 9, 9, 9, 0, 0, 0, 1 })]
+    [MemberData(nameof(TestData))]
     public void Test(int[] l1, int[] l2, int[] result)
     {
         Assert.Equal((ListNode)result, Method((ListNode)l1, (ListNode)l2));

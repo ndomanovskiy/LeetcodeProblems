@@ -5,10 +5,15 @@ namespace LeetcodeProblems;
 /// </summary>
 public class LengthOfLongestSubstring
 {
+    public static IEnumerable<object[]> TestData => new List<object[]>
+    {
+        new object[] { "abcabcbb", 3 },
+        new object[] { "bbbbb", 1 },
+        new object[] { "pwwkew", 3 },
+    };
+
     [Theory]
-    [InlineData("abcabcbb", 3)]
-    [InlineData("bbbbb", 1)]
-    [InlineData("pwwkew", 3)]
+    [MemberData(nameof(TestData))]
     public void Test(string s, int result) => Assert.Equal(result, Method(s));
 
     private int Method(string s)

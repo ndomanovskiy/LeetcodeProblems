@@ -5,12 +5,17 @@ namespace LeetcodeProblems;
 /// </summary>
 public class Reverse
 {
+    public static IEnumerable<object[]> TestData => new List<object[]>
+    {
+        new object[] { 123, 321 },
+        new object[] { -123, -321 },
+        new object[] { 120, 21 },
+        new object[] { 901000, 109 },
+        new object[] { 1534236469, 0 },
+    };
+
     [Theory]
-    [InlineData(123, 321)]
-    [InlineData(-123, -321)]
-    [InlineData(120, 21)]
-    [InlineData(901000, 109)]
-    [InlineData(1534236469, 0)]
+    [MemberData(nameof(TestData))]
     public void Test(int x, int result)
     {
         Assert.Equal(result, Method(x));

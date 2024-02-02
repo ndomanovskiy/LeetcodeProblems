@@ -5,11 +5,16 @@ namespace LeetcodeProblems;
 /// </summary>
 public class LongestPalindrome
 {
+    public static IEnumerable<object[]> TestData => new List<object[]>
+    {
+        new object[] { "babad", "bab" },
+        new object[] { "a", "a" },
+        new object[] { "cbbd", "bb" },
+        new object[] { "avsesv21212xxxoxxx", "xxxoxxx" },
+    };
+
     [Theory]
-    [InlineData("babad", "bab")]
-    [InlineData("a", "a")]
-    [InlineData("cbbd", "bb")]
-    [InlineData("avsesv21212xxxoxxx", "xxxoxxx")]
+    [MemberData(nameof(TestData))]
     public void Test(string input, string result)
     {
         Assert.Equal(result, Method(input));

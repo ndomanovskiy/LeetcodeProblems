@@ -5,15 +5,20 @@ namespace LeetcodeProblems;
 /// </summary>
 public class MultiplyStrings
 {
+    public static IEnumerable<object[]> TestData => new List<object[]>
+    {
+        new object[] { "2", "3", "6" },
+        new object[] { "0", "0", "0" },
+        new object[] { "6", "0", "0" },
+        new object[] { "3", "3", "9" },
+        new object[] { "999", "999", "998001" },
+        new object[] { "123", "456", "56088" },
+        new object[] { "1234", "567", "699678" },
+        new object[] { "567", "1234", "699678" },
+    };
+
     [Theory]
-    [InlineData("2", "3", "6")]
-    [InlineData("0", "0", "0")]
-    [InlineData("6", "0", "0")]
-    [InlineData("3", "3", "9")]
-    [InlineData("999", "999", "998001")]
-    [InlineData("123", "456", "56088")]
-    [InlineData("1234", "567", "699678")]
-    [InlineData("567", "1234", "699678")]
+    [MemberData(nameof(TestData))]
     public void Test(string num1, string num2, string expected)
     {
         Assert.Equal(Method(num1, num2), expected);

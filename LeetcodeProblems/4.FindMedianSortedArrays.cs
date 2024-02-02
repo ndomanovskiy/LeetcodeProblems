@@ -5,10 +5,15 @@ namespace LeetcodeProblems;
 /// </summary>
 public class FindMedianSortedArrays
 {
+    public static IEnumerable<object[]> TestData => new List<object[]>
+    {
+        new object[] { new[] { 1, 3 }, new[] { 2 }, 2 },
+        new object[] { new[] { 1, 2 }, new[] { 3, 4 }, 2.5 },
+        new object[] { new[] { 1, 3 }, new[] { 2, 7 }, 2.5 },
+    };
+
     [Theory]
-    [InlineData(new[] { 1, 3 }, new[] { 2 }, 2)]
-    [InlineData(new[] { 1, 2 }, new[] { 3, 4 }, 2.5)]
-    [InlineData(new[] { 1, 3 }, new[] { 2, 7 }, 2.5)]
+    [MemberData(nameof(TestData))]
     public void Test(int[] nums1, int[] nums2, double result)
     {
         Assert.Equal(result, Method(nums1, nums2));

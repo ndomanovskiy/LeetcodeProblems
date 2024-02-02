@@ -7,10 +7,15 @@ namespace LeetcodeProblems;
 /// </summary>
 public class Convert
 {
+    public static IEnumerable<object[]> TestData => new List<object[]>
+    {
+        new object[] { "PAYPALISHIRING", 3, "PAHNAPLSIIGYIR" },
+        new object[] { "PAYPALISHIRING", 4, "PINALSIGYAHRPI" },
+        new object[] { "a", 1, "a" },
+    };
+
     [Theory]
-    [InlineData("PAYPALISHIRING", 3, "PAHNAPLSIIGYIR")]
-    [InlineData("PAYPALISHIRING", 4, "PINALSIGYAHRPI")]
-    [InlineData("a", 1, "a")]
+    [MemberData(nameof(TestData))]
     public void Test(string s, int numRows, string result)
     {
         Assert.Equal(result, Method(s, numRows));

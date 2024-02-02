@@ -5,12 +5,17 @@ namespace LeetcodeProblems;
 /// </summary>
 public class IsPalindrome
 {
+    public static IEnumerable<object[]> TestData => new List<object[]>
+    {
+        new object[] { 121, true },
+        new object[] { -121, false },
+        new object[] { 10, false },
+        new object[] { 11, true },
+        new object[] { 223322, true },
+    };
+
     [Theory]
-    [InlineData(121, true)]
-    [InlineData(-121, false)]
-    [InlineData(10, false)]
-    [InlineData(11, true)]
-    [InlineData(223322, true)]
+    [MemberData(nameof(TestData))]
     public void Test(int x, bool result)
     {
         Assert.Equal(result, Method(x));
